@@ -4,17 +4,16 @@ const { DataTypes } = require("sequelize");
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define(
-    "activity",
+    "Activity",
     {
       id: {
-        type: DataTypes.UUID,
-        defaultValues: DataTypes.UUIDV4,
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
         primaryKey: true,
       },
       name: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
       },
       dificulty: {
         type: DataTypes.ENUM,
@@ -22,7 +21,7 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       duration: {
-        type: DataTypes.INTEGER, //? AVERIGUAR PARA QUE EL FORMATO SEA '(NUMERO) HS'
+        type: DataTypes.INTEGER,
         allowNull: true,
       },
       season: {

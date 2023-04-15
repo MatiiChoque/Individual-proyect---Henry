@@ -4,18 +4,20 @@ const { DataTypes } = require("sequelize");
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define(
-    "country",
+    "Country",
     {
       id: {
-        type: DataTypes.UUID,
-        defaultValues: DataTypes.UUIDV4,
+        type: DataTypes.STRING(3),
+        validate: {
+          len: [3],
+        },
         primaryKey: true,
       },
       name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      flagimage: {
+      flags: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -32,11 +34,11 @@ module.exports = (sequelize) => {
         allowNull: true,
       },
       area: {
-        type: DataTypes.STRING,
+        type: DataTypes.FLOAT,
         allowNull: true,
       },
       population: {
-        type: DataTypes.INTEGER, //? HACER QUE LA POBLACION TENGA FORMATO '(NUMERO) HABITANTES'
+        type: DataTypes.INTEGER,
       },
       createInDb: {
         type: DataTypes.BOOLEAN,
