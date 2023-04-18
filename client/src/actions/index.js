@@ -9,3 +9,17 @@ export const getCountries = () => {
     });
   };
 };
+
+export const filterCountriesByContinent = (payload) => {
+  return {
+    type: "FILTER_BY_CONTINENT",
+    payload,
+  };
+};
+
+export const countriesByAlphabeticOrder = (payload) => {
+  return {
+    type: "ALPHABETIC_ORDER",
+    payload,
+  };
+};

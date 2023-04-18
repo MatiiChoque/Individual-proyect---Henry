@@ -7,9 +7,11 @@ const getApiInfo = async () => {
     return {
       id: countryData.cca3,
       name: countryData.name.common,
-      flags: countryData.flags.map((elem) => elem),
-      continent: countryData.continents,
-      capital: countryData.capital ? countryData.capital : "No tiene capital",
+      flags: countryData.flags[1],
+      continent: countryData.region,
+      capital: countryData.capital
+        ? countryData.capital[0]
+        : "No tiene capital",
       subregion: countryData.subregion,
       area: countryData.area,
       population: countryData.population,

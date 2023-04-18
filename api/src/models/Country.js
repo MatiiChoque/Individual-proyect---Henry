@@ -10,6 +10,7 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING(3),
         validate: {
           len: [3],
+          isAlpha: true,
         },
         primaryKey: true,
       },
