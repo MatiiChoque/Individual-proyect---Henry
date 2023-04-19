@@ -8,6 +8,7 @@ import {
 import { Link } from "react-router-dom";
 import Card from "./Card";
 import Paginated from "./Paginated";
+import SearchBar from "./SearchBar";
 
 const Home = () => {
   //todo                                           DEFINIMOS LOS ESTADOS Y EL PAGINADO
@@ -76,7 +77,7 @@ const Home = () => {
           <option value="Europe">Europe</option>
           <option value="Oceania">Oceania</option>
         </select>
-        <h2>hola</h2>
+        <SearchBar />
         <Paginated
           countriesPerPage={countriesPerPage}
           allCountries={allCountries.length}
