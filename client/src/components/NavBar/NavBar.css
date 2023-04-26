@@ -1,0 +1,109 @@
+.NavBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1em;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+.LinkLogo {
+  color: white;
+  text-decoration: none;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 40px;
+}
+.LinkNav {
+  text-decoration: none;
+  color: white;
+  text-decoration: none;
+  font-family: "Courier New", Courier, monospace;
+}
+.ButtonLink1 {
+  font-size: 30px;
+  color: #e1e1e1;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 800;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+.ButtonLink1:focus,
+.ButtonLink1:hover {
+  color: #fff;
+}
+
+.ButtonLink1:focus:after,
+.ButtonLink1:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.ButtonLink1:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #00e6f7;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+.ButtonLink2 {
+  font-size: 20px;
+  color: #e1e1e1;
+  font-family: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+.ButtonLink2:focus,
+.ButtonLink2:hover {
+  color: #fff;
+}
+
+.ButtonLink2:focus:after,
+.ButtonLink2:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.ButtonLink2:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #00e6f7;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}

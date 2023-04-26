@@ -1,0 +1,13 @@
+.textTitle {
+  color: white;
+  text-decoration: none;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 40px;
+}
+.text {
+  color: rgb(252, 252, 252);
+  text-decoration: none;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 25px;
+  margin: 15px;
+}

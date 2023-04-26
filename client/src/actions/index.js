@@ -30,6 +30,22 @@ export const getNameCountries = (name) => {
   };
 };
 
+export const getDetailCountry = (idCountry) => {
+  return async (dispatch) => {
+    try {
+      var response = await axios.get(
+        `http://localhost:3001/countries/${idCountry}`
+      );
+      return dispatch({
+        type: "GET_DETAIL_COUNTRY",
+        payload: response.data,
+      });
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+};
+
 export const getActivities = () => {
   return async (dispatch) => {
     try {
@@ -58,6 +74,13 @@ export const postActivity = (payload) => {
   };
 };
 
+export const filterByActivity = (payload) => {
+  return {
+    type: "FILTER_BY_ACTIVITY",
+    payload,
+  };
+};
+
 export const filterCountriesByContinent = (payload) => {
   return {
     type: "FILTER_BY_CONTINENT",
@@ -69,5 +92,18 @@ export const countriesByAlphabeticOrder = (payload) => {
   return {
     type: "ALPHABETIC_ORDER",
     payload,
+  };
+};
+
+export const countriesByPopulationOrder = (payload) => {
+  return {
+    type: "POPULATION_ORDER",
+    payload,
+  };
+};
+
+export const clearDetailCountry = () => {
+  return {
+    type: "CLEAR_DETAIL_COUNTRY",
   };
 };

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getNameCountries } from "../actions";
+import { getNameCountries } from "../../actions";
+import "./SearchBar.css";
 
-const SearchBar = () => {
+const SearchBar = ({ setCurrentPage }) => {
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
 
@@ -10,6 +11,7 @@ const SearchBar = () => {
     event.preventDefault();
     if (search.length === 0) return alert("You should introduce a country");
     dispatch(getNameCountries(search));
+    setCurrentPage();
     setSearch("");
   };
 
@@ -20,12 +22,16 @@ const SearchBar = () => {
   return (
     <div>
       <form className="Search" onSubmit={handleOnSubmit}>
-        <input
-          type="text"
-          placeholder="Write a country"
-          onChange={handleOnInputChange}
-          value={search}
-        />
+        <div className="inputbox">
+          <span>Write a country</span>
+          <input
+            type="text"
+            required="required"
+            onChange={handleOnInputChange}
+            value={search}
+          />
+          <i></i>
+        </div>
         <button
           className="Search_Button"
           type="submit"
